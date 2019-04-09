@@ -1,27 +1,26 @@
-#include "book.h"
+//begin book.h
+#ifndef BOOK_H
+#define BOOK_H
 
-Book::Book(int id, string bookName, string auth, string cat) {
-    // complete constructor
-}
+#include <string>
+#include "person.h"
 
-string Book::getTitle() {
-    return ""; // complete
-}
+class Book
+{
+private:
+    string   title;
+    string   author;
+    string   category;
+    int      bookID;
+    Person * personPtr = nullptr;
 
-string Book::getAuthor() {
-    return ""; // complete
-}
-
-string Book::getCategory() {
-    return ""; // complete
-}
-
-int Book::getId() {
-    return 0; // complete
-}
-void Book::setPersonPtr(Person * ptr) {
-} // complete
-
-Person * Book::getPersonPtr() {
-    return nullptr; // complete
-}
+public:
+    Book(int id, string bookName, string auth, string cat);
+    string   getTitle();
+    string   getAuthor();
+    string   getCategory();
+    int      getId();
+    void     setPersonPtr(Person * ptr);
+    Person * getPersonPtr();
+};
+#endif // end book.h
